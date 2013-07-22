@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../../xsl/cards-to-list.xsl" media="screen"?><!--
+This is the deck that is going to be printed and handed out to our
+customers.
+-->
+<deck>
+  <title>First Printed Deck</title>
+  <categories>
+    <category id="process" label="Process" color="#DD0025" background-color="#BB312C" cmyk="0 100 70 10"/>
+    <category id="architecture-design" label="Architecture and Design" background-color="#ED7738" color="#FC7A25" cmyk="0 35 85 0"/>
+    <category id="mindset" label="Mindset" color="#F80068" background-color="#7D2D65" cmyk="15 100 0 10"/>
+    <category id="distributed-agile" label="Distributed Agile" color="#454285" background-color="#0C2164" cmyk="65 70 0 10"/>
+    <category id="code" label="Code" color="#107FD5" background-color="#1B4E80" cmyk="95 25 0 10"/>
+    <category id="test" label="Test" color="#6DC726" background-color="#378241" cmyk="75 0 75 0"/>
+  </categories>
+  
+  <card id="poutsma-principle" tags="mindset" sponsors="ifuld" category="mindset" bitly="http://bit.ly/eG5fsb">
+    <front>
+      <para>If something is too complex to understand, it must be wrong</para>
+    </front>
+    <back>
+      <para>...and it's your job to prove it wrong. Also known as the 'Poutsma Principle'.</para>
+    </back>
+  </card>
+
+  <card id="fail-fast" tags="process mindset" sponsors="wspringer" category="mindset" bitly="http://bit.ly/hOXhny">
+    <front>
+      <para>Fail fast</para>
+    </front>
+    <back>
+      <para>
+        Address risks early on in the project. Don't postpone
+        difficult tasks, because they provide you with an opportunity
+        to learn. Tackle them head-on, and get it over with.
+      </para>
+    </back>
+  </card>
+
+  <card id="dry-principle" tags="code definition" sponsors="jlmorlhon" category="code" bitly="http://bit.ly/fh7McI">
+    <front>
+      <para>Don't Repeat Yourself</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</para>
+        <attribution>Andy Hunt and Dave Thomas</attribution>
+      </blockquote>
+    </back>
+  </card>
+  
+  <card altid="composition-over-inheritance" id="crp" sponsors="akalia rrawat" tags="design oop principle" category="architecture-design" bitly="http://bit.ly/hzKtcb">
+    <front>
+      <para>Favor composition over inheritance</para>
+    </front>
+    <back>
+      <para>Also known as the 'composite reuse principle'. Favor
+      composition over inheritance to achieve polymorphism.</para>
+    </back>
+  </card>
+  
+  <card altid="focused-interfaces" id="isp" sponsors="akalia rrawat" tags="design oop principle" category="architecture-design" bitly="http://bit.ly/gkrskx">
+    <front>
+      <para>Write small and focused interfaces</para>
+    </front>
+    <back>
+      <para>Also known as the 'interface segregation principle'. Many
+      specific interfaces are better than one combined general
+      interface.</para>
+    </back>
+  </card>
+
+  <card altid="thread-safe" id="thread-safety-mantra" tags="design concurrency" sponsors="ifuld" category="code" bitly="http://bit.ly/gbXjXc">
+    <front>
+      <para>Aim for thread safety</para>
+    </front>
+    <back>
+      <para>In order of decreasing safety:</para>
+      <ul>
+        <li>Stateless services</li>
+        <li>Immutable objects</li>
+        <li>Encapsulated locks</li>
+        <li>Not thread safe</li>
+      </ul>
+    </back>
+  </card>
+
+  <card id="the-zone" tags="mindset" sponsors="ifuld" category="mindset" bitly="http://bit.ly/fkrkGA">
+    <front>
+      <para>Respect the zone</para>
+    </front>
+    <back>
+      <para>'The zone' is a mode of consciousness that is associated
+      with higher capabilities. When in the zone a developer is more
+      productive.</para>
+      <para>
+        When a developer is in the zone, avoid disruptions.
+      </para>
+    </back>
+    <ulink url="http://en.wikipedia.org/wiki/Flow_(psychology)"/>
+  </card>
+
+  <card id="team-rhythm" sponsors="ifuld" tags="scrum" category="process" bitly="http://bit.ly/gfk6pL">
+    <front>
+      <para>Get the team in a rhythm</para>
+    </front>
+    <back>
+      <para>
+        A team that works according to a defined heartbeat is much
+        more effective since it doesn't waste time organizing meetings
+        or spend time thinking about and planning what to do when.
+      </para>
+    </back>
+  </card>
+
+  <card altid="clean-logs" id="keep-your-logs-clean" sponsors="cleclerc" tags="manageability" category="process" bitly="http://bit.ly/h8r0nQ">
+    <front>
+      <para>Keep your logs clean</para>
+    </front>
+    <back>
+      <para>
+        Log everything you need, but nothing more:
+      </para>
+      <ul>
+        <li>Log at the right level</li>
+        <li>Log every message once</li>
+        <li>Categorize if needed</li>
+        <li>Throw meaningful exceptions</li>
+        <li>Don't cry wolf</li>
+      </ul>
+    </back>
+  </card>
+
+    <card id="kiss" sponsors="ragrawal gschoonheim" tags="design" category="architecture-design" bitly="http://bit.ly/h79VId">
+    <front>
+      <para>Your solution should not be more complicated than the
+      problem</para>
+    </front>
+    <back>
+      <para>
+        Also known as:
+      </para>
+      <ul>
+        <li>The simplest thing that could possibly work</li>
+        <li>Keep It Simple Stupid (KISS)</li>
+        <li>Less is more</li>
+        <li>You Ain't Gonna Need It (YAGNI)</li>
+      </ul>
+    </back>
+  </card>    
+
+  <card id="code-review" tags="definition team quality" sponsors="ifuld" category="process" bitly="http://bit.ly/gOpcIU">
+    <front>
+      <para>Review code</para>
+    </front>
+    <back>
+      <para>The primary goal of code review is to increase its
+      quality. Can be used as an additional safety net alongside pair
+      programming.
+      </para>
+      <para>It is also a good way to share knowledge and pick up some
+      new tricks.</para>
+    </back>
+  </card>
+
+  <card id="team-member-equality" tags="process mindset scrum distributed-agile" sponsors="gschoonheim" category="mindset" bitly="http://bit.ly/hPhC0V">
+    <front>
+      <para>Everybody in a project team is equal</para>
+    </front>
+    <back>
+      <para>We distinguish on the validity of the ideas, not on roles,
+      authority or location.</para>
+    </back>
+  </card>
+  
+  <card id="no-broken-windows" tags="mindset" sponsors="gschoonheim" category="mindset" bitly="http://bit.ly/h1Bm7v">
+    <front>
+      <para>No broken windows</para>
+    </front>
+    <back>
+      <para>If something is broken, then fix it now, otherwise it will
+      come back to haunt you in the future.</para>
+    </back>
+  </card>
+
+  <card altid="no-anemic-domain-model" sponsors="ifuld" id="ddd" tags="design" category="architecture-design" bitly="http://bit.ly/hfjbRD">
+    <front>
+      <para>Beware of anemic domain models</para>
+    </front>
+    <back>
+      <para>
+        Anemic domain models are data structures without any behaviour.
+      </para>
+      <para>
+        Domain-Driven Design (Eric Evans) is an alternative that 
+        improves code maintainability. 
+      </para>
+    </back>
+    <ulink url="http://www.domaindrivendesign.org/resources/what_is_ddd"/>
+    <note>
+      This is an anti-pattern: should be rephrased into something like 'vibrant' domain models.
+    </note>
+  </card>
+
+  <card id="no-test-no-bugfix" tags="test" category="test" sponsors="ifuld" bitly="http://bit.ly/fMf3Lo">
+    <front>
+      <para>Don't change code without a test</para>
+    </front>
+    <back>
+      <ul>
+        <li>Don't fix a bug before you have a broken test</li>
+        <li>A feature is only considered done once you have
+        tests for it</li>
+        <li>Don't refactor before you have sufficient test coverage</li>
+      </ul>
+    </back>
+  </card>
+  
+  <card id="assertions" tags="code" sponsors="wspringer" category="code" bitly="http://bit.ly/ejk4l4">
+    <front>
+      <para>Assert against improper behaviour</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>If it can't happen, use assertions to assure it won't.</para>
+        <attribution>Andrew Hunt, David Thomas</attribution>
+      </blockquote>
+    </back>
+  </card>
+  
+  <card altid="thirty-minute-methods" id="maximum-method-weight" tags="code" sponsors="ifuld" category="code" bitly="http://bit.ly/fIHSOX">
+    <front>
+      <para>Split functionality into small units</para>
+    </front>
+    <back>
+      <para>A function should be replaceable by one of your colleagues in less than thirty minutes.</para>
+    </back>
+  </card>
+
+  <card id="alone-time" tags="team process" sponsors="ifuld" category="process" bitly="http://bit.ly/ghjkXd">
+    <front>
+      <para>Alone time</para>
+    </front>
+    <back>
+      <para>For some situations pair programming is not effective. Be prepared to allow yourself and your team members to have some time alone.</para>
+    </back>
+  </card>
+
+  <card id="fallacies-distributed-computing" tags="integration architecture" sponsors="wspringer" category="architecture-design" bitly="http://bit.ly/eEc5jq">
+    <front>
+      <para>Remember the fallacies of distributed computing</para>
+    </front>
+    <back>
+      <blockquote>
+        <ul>
+          <li>The network is reliable</li>
+          <li>Latency is zero</li>
+          <li>Bandwidth is infinite</li>
+          <li>The network is secure</li>
+          <li>Topology doesn't change</li>
+          <li>There is one administrator</li>
+          <li>Transport cost is zero</li>
+          <li>The network is homogeneous</li>
+        </ul>
+        <attribution>Peter Deutsch</attribution>
+      </blockquote>
+    </back>
+    <ulink url="http://en.wikipedia.org/wiki/Fallacies_of_Distributed_Computing"/>
+  </card>
+
+  <card id="small-increments" tags="process" sponsors="ifuld" category="code" bitly="http://bit.ly/g5LPEg">
+    <front>
+      <para>Work in small increments</para>
+    </front>
+    <back>
+      <para>Every commit should be a change from one stable state of the system to another stable state of the system, and should not represent more than two hours of work.</para>
+    </back>
+  </card>
+
+  <card id="one-change-at-a-time" tags="code" sponsors="ifuld" category="code" bitly="http://bit.ly/e00q9B">
+    <front>
+      <para>One change at a time</para>
+    </front>
+    <back>
+      <para>A single commit should contain only changes related to a single user story/issue. For instance, don't mix formatting changes with bug fixes.</para>
+    </back>
+  </card>
+
+  <card id="no-broken-builds" tags="team quality" sponsors="aphillips" category="process" bitly="http://bit.ly/ejXw87">
+    <front>
+      <para>Nobody goes home if the build is broken</para>
+    </front>
+    <back>
+      <para>It's the team's code; it's also the team's responsibility to have a running build. If the person who broke the build isn't around, that's no excuse.</para>
+    </back>
+  </card>
+
+<!--   <card id="successful-build-above-all" sponsors="mvansteenbergen" category="code"> -->
+<!--     <front> -->
+<!--       <para>Successful build above all</para> -->
+<!--     </front> -->
+<!--     <back> -->
+<!--       <para>It's the team's code; it's also the team's responsibility -->
+<!--       to have a successful build. If the person who broke the build -->
+<!--       isn't around, that's no excuse.</para> -->
+<!--     </back> -->
+<!--   </card> -->
+
+  <card altid="do-the-right-thing" id="do-what-you-think" tags="mindset" sponsors="lvanderpoel" category="mindset" bitly="http://bit.ly/h3fZ4X">
+    <front>
+      <para>Do what you think is right, not always what you were told
+      to do</para>
+    </front>
+    <back>
+      <para>Dare to push back. You are a professional, not a robot.</para>
+    </back>
+  </card>
+
+  <card id="timebox" sponsors="ragrawal pgarg" tags="scrum process" category="process" bitly="http://bit.ly/ePLE2z">
+    <front>
+      <para>Timebox the unknown</para>
+    </front>
+    <back>
+      <ul>
+        <li>Timebox a story/task which can't be estimated during
+        planning.</li>
+        <li>Communicate the results to the product owner / scrum master in order to have accurate estimates.</li>
+      </ul>
+    </back>
+  </card>
+
+  <card id="boy-scout-rule" tags="code" sponsors="ifuld" category="code" bitly="http://bit.ly/hIOozD">
+    <front>
+      <para>Leave the campground cleaner than you found it</para>
+    </front>
+    <back>
+      <para>Also known as the Boy Scout Rule, after the Boy Scouts of
+      America. Applied to programming: Always check in code in a
+      cleaner state than when you checked it out.</para>
+    </back>
+  </card>
+
+  <card id="no-blame-no-mercy" tags="mindset" sponsors="aphillips wspringer" category="mindset" bitly="http://bit.ly/dYMaJJ">
+    <front>
+      <para>No blame, but no mercy</para>
+    </front>
+    <back>
+      <para>Feel free to make mistakes, be obliged to learn from them.
+      Take time to look back and learn from what you're doing so you
+      can actively improve. We criticize bad code, we don't
+      criticize people. Don't just fix it; discuss it as well.</para>
+    </back>
+  </card>
+
+  <card id="heisenbergs-principle" tags="principle test" category="test" sponsors="wspringer" bitly="http://bit.ly/euBFXg">
+    <front>
+      <para>Beware of Heisenbugs</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>The measurement of position necessarily disturbs a particle's momentum, and vice versa.</para>
+        <attribution>Werner Heisenberg</attribution>
+      </blockquote>
+      <para>Similarly, inspecting a running program might alter the behaviour of the program, known as a Heisenbug.</para>
+    </back>
+  </card>
+
+  <card id="dare-to-say-no" tags="mindset" sponsors="aphillips" category="mindset" bitly="http://bit.ly/g4NpmH">
+    <front>
+      <para>Dare to say no</para>
+    </front>
+    <back>
+      <para>In Software Engineering, some things are just not
+      possible. Stand up for your values as a professional and refuse
+      to do them! A good doctor will not promise to heal everything
+      either.
+      </para>
+    </back>
+    <ulink url="http://manifesto.softwarecraftsmanship.org/"/>
+    <ulink url="http://www.infoq.com/presentations/craftmanship-ethics"/>
+  </card>
+
+  <card id="two-minute-rule" tags="mindset rule" sponsors="gschoonheim" category="mindset" bitly="http://bit.ly/fmam2x">
+    <front>
+      <para>If you are stuck developing for more than two minutes, you
+      MUST ask somebody else</para>
+    </front>
+    <back>
+      <para>It's not professional to waste time by trying to solve
+      something on your own that is quicker solved with help.
+      </para>
+    </back>
+  </card>
+
+  <card id="readable-code" sponsors="ragrawal pgarg" tags="clean code" category="code" bitly="http://bit.ly/gsNtRt">
+    <front>
+      <para>Write code that humans can easily understand</para>
+    </front>
+    <back>
+      <blockquote>
+        <ul>
+          <li>Any fool can write code that a computer can
+          understand. Good programmers write code that humans can
+          understand.</li>
+          <li>A simple, readable implementation is head and shoulders
+          above a clever-but-confusing, look-at-me implementation.</li>
+          <li>Things to keep in mind are readability, maintainability and speed of development.</li>
+        </ul>
+        <attribution>Martin Fowler</attribution>
+      </blockquote>
+    </back>
+  </card>
+
+  <card id="separation-of-concerns" tags="code" sponsors="ifuld" category="code" bitly="http://bit.ly/ehkmTM">
+    <front>
+      <para>Separation of concerns</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>Separate a program into non-overlapping concerns.</para>
+        <attribution>Edsger W. Dijkstra</attribution>
+      </blockquote>
+    </back>
+    <ulink url="http://en.wikipedia.org/wiki/Separation_of_concerns"/>
+  </card>
+
+  <card altid="clean-build" id="build" sponsors="ragrawal" tags="code" category="code" bitly="http://bit.ly/gSzxew">
+    <front>
+      <para>Keep the build clean</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>Keeping the build clean is not just about keeping it free of compilation errors or test failures. Warnings are also an important and critical part of code hygiene.</para>
+        <attribution>Johannes Brodwall</attribution>
+      </blockquote>
+    </back>
+  </card>
+
+  <card id="time-for-tech-debt" tags="craftsmanship" sponsors="aphillips" category="process" bitly="http://bit.ly/fWNq5P">
+    <front>
+      <para>Fight for time to tackle tech debt</para>
+    </front>
+    <back>
+      <para>Make your Product Owner understand why it is critical to
+      spend time on technical debt, even if it doesn't provide new
+      functionality.</para>
+    </back>
+  </card>
+  
+  <card id="three-strikes" tags="mindset" sponsors="lvanderpoel" category="mindset" bitly="http://bit.ly/gKF9po">
+    <front>
+      <para>Three strikes and you automate</para>
+    </front>
+    <back>
+      <ul>
+        <li>The first time you do something, you just do it manually</li>
+        <li>The second time you do something similar, you wince at the repetition, but you do it anyway</li>
+        <li>The third time you do something similar, you automate</li>
+      </ul>
+    </back>
+  </card>
+
+  <card id="curiosity" tag="mindset" sponsors="wspringer" category="mindset" bitly="http://bit.ly/g1oGb1">
+    <front>
+      <para>Be curious</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>Curiouser and curiouser!</para>
+        <attribution>Alice in Wonderland</attribution>
+      </blockquote>
+      <para>Curiosity is one of the main sources of creativity.</para>
+    </back>
+  </card>
+
+  <card altid="shared-design-understanding" id="communicate-design-ideas" tags="process architecture conceptual-integrity" sponsors="wspringer" category="architecture-design" bitly="http://bit.ly/hV9Kxv">
+    <front>
+      <para>Shared understanding of the design</para>
+    </front>
+    <back>
+      <para>Everyone in the team should be aware of the core design
+      ideas that have given shape and structure to the software so
+      far, and understand the underlying intent.</para>
+    </back>
+  </card>
+  
+  <card altid="master-your-tools" id="expert-toolbox" sponsors="ragrawal gschoonheim" tags="tools" category="mindset" bitly="http://bit.ly/fmYabp">
+    <front>
+      <para>Master your tools</para>
+    </front>
+    <back>
+      <para>Expect unprecedented productivity gain when investing time
+      in mastering your tools. Tools will help you to:</para>
+      <ul>
+        <li>Accelerate</li>
+        <li>Focus</li>
+        <li>Avoid repetitive tasks</li>
+        <li>Eliminate duplication</li>
+      </ul>
+      <para>Tools include your IDE, commandline tools, desktop tools,
+      editors, etc.</para>
+    </back>
+    <note>
+      Samurai and his sword are one. See the zone.
+    </note>
+  </card>    
+
+  <card altid="diagnose-before-cure" id="improving-performance-measure" tags="performance" sponsors="ifuld aphillips" category="process" bitly="http://bit.ly/fH3Ru4">
+    <front>
+      <para>Diagnose before cure</para>
+    </front>
+    <back>
+      <para>Measure first, make an isolated change, repeat until satisfied.</para>
+      <para>Before you tune performance, first measure it. Then fix the worst bottleneck and measure again. Commonly you will find that bottlenecks shift, and you are most effective when continuously measuring your progress.</para>
+    </back>
+  </card>
+ 
+  <card altid="rich-communication" id="communication-means" tags="mindset" sponsors="lvanderpoel" category="mindset" bitly="http://bit.ly/dKLvjK">
+    <front>
+      <para>Prefer rich modes of communication</para>
+    </front>
+    <back>
+      <ul>
+        <li>Personal conversation over telephone call</li>
+        <li>Telephone call over chat</li>
+        <li>Chat over email</li>
+        <li>Email over voice mail</li>
+      </ul>
+    </back>
+    <ulink url="http://www.agilemodeling.com/essays/communication.htm#HowDoWeCommunicate"/>
+  </card>
+
+  <card id="non-functionals" tags="process architecture" sponsors="wspringer" category="architecture-design" bitly="http://bit.ly/ePpC8W">
+    <front>
+      <para>Deal with non-functionals</para>
+    </front>
+    <back>
+      <para>Work all your non-functional requirements into goals on a
+      clearly defined scale and put them on the backlog, either as
+      part of the 'definition of done' or as separate user
+      stories.</para>
+    </back>
+  </card>
+  
+  <card id="no-museum" tags="code" sponsors="wspringer" category="code" bitly="http://bit.ly/ifpmb5">
+    <front>
+      <para>Prevent your code base from turning into a museum</para>
+    </front>
+    <back>
+      <para>There is no point in keeping dead code lying around in
+      your code base. Get rid of it. Your version history will always
+      allow you to get it back if you need to. The same goes for
+      commented-out code: get rid of it.</para>
+      <para>Keeping your codebase free of reminiscences of the past
+      will make it easier to navigate and understand.</para>
+    </back>
+  </card>
+
+  <card altid="comment-with-care" id="useful-comments" sponsors="bgarvelink aphillips" category="code" tags="code" bitly="http://bit.ly/fdHw86">
+    <front>
+      <para>Comment with care</para>
+    </front>
+    <back>
+      <ul>
+        <li>Don't document bad code – rewrite it</li>
+        <li>Don't repeat the code – clarify its intent</li>
+        <li>Document surprises and workarounds</li>
+        <li>Make every comment count</li>
+      </ul>
+    </back>
+  </card>
+
+  <card id="context-over-habit" category="mindset" tags="process" bitly="http://bit.ly/hNswdJ" sponsors="ldijkhuis">
+    <front>
+      <para>Context over habit &amp; best practice</para>
+    </front>
+    <back>
+      <para>With all "best practices", principles and experience,
+      you should always keep an eye on the context: does what used to work 
+      there and then work here now? Keep thinking, keep looking.</para>
+    </back>
+  </card>
+
+  <card altid="make-it-work-right-fast" id="make-it" category="mindset" tags="mindset" bitly="http://bit.ly/hnENEg" sponsors="lbonnema">
+    <front>
+      <para>Make it work</para>
+      <para>Make it right</para>
+      <para>Make it fast</para>
+    </front>
+    <back>
+      <para>
+        To prevent analysis paralysis, follow these simple steps in
+        case a problem seems too big to tackle. First simply make it
+        work. Don't pay attention to craftsmanship principles. Second, make it right, by making your code compliant
+        with craftsmanship principles. Finally, make it fast if really
+        needed.
+      </para>
+    </back>
+  </card>
+
+  <card id="focus-on-flow" category="mindset" tags="flow" sponsors="omaassen" bitly="http://bit.ly/i9fenO">
+    <front>
+      <para>Focus on flow</para>
+    </front>
+    <back>
+      <para>Focus on banishing costs increases costs.</para>
+      <para>Focus on flow decreases costs.</para>
+    </back>
+  </card>
+
+  <card id="brutal-transparency" category="mindset" tags="trust" sponsors="omaassen" bitly="http://bit.ly/dK5OCf">
+    <front>
+      <para>Brutal transparency</para>
+    </front>
+    <back>
+      <para>The only way to build trust is to be honest and transparent under all circumstances.</para>
+    </back>
+  </card>
+
+  <card id="test-code-one" category="test" tags="test" sponsors="wspringer" bitly="http://bit.ly/hw4BK8">
+    <front>
+      <para>Think of code and test as one</para>
+    </front>
+    <back>
+      <blockquote>
+        <para>When writing the code, think of the test.</para>
+        <para>When writing the test, think of the code.</para>
+        <para>When you think of code and test as one, testing is easy and code is beautiful.</para>
+        <attribution>Testivus</attribution>
+      </blockquote>
+    </back>
+  </card>
+  
+  <card id="test-everything" category="test" tags="test" sponsors="cwortel" bitly="http://bit.ly/gu1Lq3">
+    <front>
+      <para>When you can't test everything, you're building too much</para>
+    </front>
+    <back>
+      <para>When a story isn't tested, it simply is not ready for
+      production.  This means that focus should be on testing
+      throughout the sprint, by the whole team.  No new work should be
+      picked up if there is still unfinished test work.</para>
+    </back>
+  </card>
+  
+  <card id="maximize-cohesion-minimize-coupling" category="architecture-design" sponsors="wspringer" bitly="http://bit.ly/euvBUZ">
+    <front>
+      <para>Maximize cohesion</para>
+      <para>Minimize coupling</para>
+    </front>
+    <back>
+      <para>Maximizing cohesion and minimizing coupling reduces complexity and increases testability.</para>
+    </back>
+  </card>
+
+  <card id="make-it-visible" category="process" sponsors="gbossuyt wspringer" bitly="http://bit.ly/h0b8NA">
+    <front>
+      <para>Make it visible</para>
+    </front>
+    <back>
+      <para>The most effective way to get a message across is by
+      visualizing it. Use simple charts and diagrams in favor of
+      spreadsheets, and pictures instead of prose.</para>
+    </back>
+  </card>
+
+  <card id="one-feature-at-a-time" category="process" sponsors="gbossuyt wspringer" bitly="http://bit.ly/hjPWim">
+    <front>
+      <para>One feature at a time</para>
+    </front>
+    <back>
+      <para>First complete what you started before starting something
+      new. It decreases time to market and allows you to apply
+      experience gained during development of the first feature in the
+      development of the next one.</para>
+    </back>
+  </card>
+
+  <card id="done" category="process" sponsors="gbossuyt" bitly="http://bit.ly/eRw2Hq">
+    <front>
+      <para>It ain't over till it's done</para>
+    </front>
+    <back>
+      <para>Create a clear definition of done to have a firm agreement on
+      whether a task is finished or not.</para>
+    </back>
+  </card>
+
+  <card altid="honor-the-timebox" id="timebox" category="process" sponsors="gbossuyt" bitly="http://bit.ly/eFftF0">
+    <front>
+      <para>Honor the timebox</para>
+    </front>
+    <back>
+      <para>You cannot stretch the boundaries of a timebox. The
+      promise of having at least something at the end of a timebox
+      should never be broken.</para>
+    </back>
+  </card>
+
+  <card id="have-fun" category="mindset" sponsors="gbossuyt ifuld" bitly="http://bit.ly/f37zxa">
+    <front>
+      <para>Have fun</para>
+    </front>
+    <back>
+      <para>If it ain't fun, it probably ain't right.</para>
+    </back>
+  </card>
+
+  <card id="eliminate-waste" category="process" sponsors="gbossuyt wspringer" bitly="http://bit.ly/fAE0fA">
+    <front>
+      <para>Eliminate waste</para>
+    </front>
+    <back>
+      <para>Sources of waste in software development include:</para>
+      <ul>
+        <li>Partially done work</li>
+        <li>Extra processes</li>
+        <li>Extra features</li>
+        <li>Task switching</li>
+        <li>Waiting</li>
+        <li>Motion</li>
+        <li>Defects</li>
+      </ul>
+    </back>
+  </card>
+
+  <card id="improve-continuously" category="mindset" sponsors="wspringer" bitly="http://bit.ly/e1p3oQ">
+    <front>
+      <para>Favor continuous improvement over delayed perfection</para>
+    </front>
+    <back>
+      <para>If you don't get better, you get worse.</para>
+      <blockquote>
+        <para>Continuous improvement is not about the things you do
+        well - that's work. Continuous improvement is about removing
+        the things that get in the way of your work. The headaches,
+        the things that slow you down, that’s what continuous
+        improvement is all about.</para>
+        <attribution>Bruce Hamilton</attribution>
+      </blockquote>
+    </back>
+  </card>
+  
+  <card id="genchi-genbutsu" category="mindset" sponsors="wspringer" bitly="http://bit.ly/fHdeNm">
+    <front>
+      <para>Genchi genbutsu</para>
+    </front>
+    <back>
+      <para>Genchi genbutsu is the Japanese expression for a practice
+      of finding your answers right down at the source.</para>
+      <para>Don't rely on second-hand reports or tables and charts of
+      data to achieve a true understanding. Instead go to the place
+      (gemba) where you can watch, observe, and 'ask why five times'.</para>
+    </back>
+  </card>  
+
+  <card altid="pair-programming" id="program-in-pairs" category="process" sponsors="wspringer" bitly="http://bit.ly/dNoAYS">
+    <front>
+      <para>Pair programming</para>
+    </front>
+    <back>
+      <para>Pairing improves focus and fosters collective ownership
+      more effectively than group discussions, documentation and
+      reviews.</para>
+    </back>
+  </card>
+
+  <card id="apis-are-forever" category="architecture-design" sponsors="wspringer" bitly="http://bit.ly/hJOvvL">
+    <front>
+      <para>APIs, like diamonds, are forever</para>
+    </front>
+    <back>
+      <para>So craft them carefully:</para>
+      <blockquote>
+        <ul>
+          <li>APIs should be self-documenting</li>
+          <li>Obey the principle of least astonishment</li>
+          <li>Use consistent parameter ordering across methods</li>
+          <li>APIs should be easy to use, and hard to misuse</li>
+        </ul>
+        <attribution>Joshua Bloch</attribution>
+      </blockquote>
+    </back>
+  </card>
+  
+</deck>

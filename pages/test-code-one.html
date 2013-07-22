@@ -1,0 +1,72 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #6DC726">
+      
+<para>Think of code and test as one</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+
+<h3 id="test-code-one-Motivation">Motivation</h3>
+
+
+<p>The card actually says it all. Writing the code while keeping in mind how you're going to test it <em>will</em> change the way you write your code. There is a fair chance you want to test your module in isolation. That imposes some restrictions on the design of your module: it forces you to minimize coupling as much as possible. And as it turns out, that's a desirable property of software any way. </p>
+
+
+<p>The reverse effect obviously also occurs when you are writing the test. You don't just write random test code. You carefully consider the different states in which your module might end up being in, and you adjust your way of testing around that. </p>
+
+
+<h3 id="test-code-one-Applicability">Applicability</h3>
+
+
+<p>Always. This is one of the reasons why having accepting test criteria associated with your user stories is important. </p>
+
+
+<h3 id="test-code-one-Application">Application</h3>
+
+
+<p>There are two ways of writing your code. You either start with your code, or you start with your test. Test driven development is about starting with your test, <em>and never start writing code before you have a test that is failing</em>. That way, your code basically flows from your tests. Consequently, your code is influence by the tests only, and not the other way around. </p>
+
+
+<p>My personal suggestion would be to go back and forth between your code and your tests. </p>
+
+
+<h3 id="test-code-one-Consequences">Consequences</h3>
+
+
+<p>Circling around between test and code might make it harder to define a stop criterion. And 80% test coverage rule might help. Geting up to 100% test coverage will be hard or (in many cases) impossible. Using assertions inside your code will definitely help to make up for the remaining 20%. Testing your code forces you to take some design decision consciously; adding assertions will have the same effect.</p>
+
+
+<h3 id="test-code-one-References">References</h3>
+
+
+<ol>
+	
+<li>
+<em>The Way of Testivus - Unit Testing Wisdom From An Ancient Software Start-up</em>, Albert Savoia, <a href="http://www.agitar.com/downloads/TheWayOfTestivus.pdf">http://www.agitar.com/downloads/TheWayOfTestivus.pdf</a>, 2007</li>
+
+</ol>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

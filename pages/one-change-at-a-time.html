@@ -1,0 +1,82 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #107FD5">
+      
+<para>One change at a time</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<p>A single commit should contain only changes related to a single user story or issue. For instance, don't mix formatting changes with bug fixes. In other words: <em>A change should have only one reason to be reverted</em>.</p>
+
+
+<h3 id="one-change-at-a-time-Motivation">Motivation</h3>
+
+<p>In case of problems it is very helpful to be able to blame just a few lines that were changed, instead of 20 files that contain everything from reformatting, refactoring log statements to changes in the transaction API.</p>
+
+
+<h3 id="one-change-at-a-time-Applicability">Applicability</h3>
+
+<p>All projects where source control is used.</p>
+
+
+<h3 id="one-change-at-a-time-Application">Application</h3>
+
+<ul>
+	
+<li>Apply changes one at a time, e.g. when you fix two issue tracker tickets in the same file, record the changes for both fixes as separate commits in version control.</li>
+	
+<li>Separate code clean up from functional changes. So <strong>Don't</strong> combine formatting changes and semantic changes in a single commit.</li>
+	
+<li>Check each changeset before you push it to the central repository, to see if it communicates your intention.</li>
+
+</ul>
+
+
+
+<h3 id="one-change-at-a-time-Effects">Effects</h3>
+
+<ul>
+	
+<li>Easier to inspect and review changes in SCM history.</li>
+	
+<li>Enables cherry-picking of changes.</li>
+	
+<li>Reduces hassle if a change needs to be reverted</li>
+
+</ul>
+
+
+
+<h3 id="one-change-at-a-time-References">References</h3>
+
+<ul>
+	
+<li>
+<a href="small-increments">small-increments</a>
+</li>
+
+</ul>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

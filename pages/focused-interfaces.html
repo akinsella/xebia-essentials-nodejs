@@ -1,0 +1,115 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #FC7A25">
+      
+<para>Write small and focused interfaces</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+
+<div id="card_images">
+	
+<span id="card_back" style="padding:10px;">
+	<span id="card_front" style="padding:10px;">
+
+</span></span>
+</div>
+
+
+<h3>
+<a name="focused-interfaces-Alsoknownas"></a>Also known as</h3>
+
+
+<p>Interface Segregation Principle: Clients should not be forced to depend upon interfaces that they don't use.</p>
+
+
+<p>Alternate Definition: The dependency of one class to another one should depend on the smallest possible interface</p>
+
+
+
+<h3>
+<a name="focused-interfaces-Motivation"></a>Motivation</h3>
+
+
+<p>How do I design a interface?</p>
+
+
+
+<h3>
+<a name="focused-interfaces-Applicability"></a>Applicability</h3>
+
+
+<p>As we define our interfaces, it becomes important that we clearly  					 			understand the role the interface plays within the context of  our  application, when defining the operation on an interface, we should  do  so in a manner that doesn't accommodate  								multiple roles.  Therefore, an interface should be responsible  for allowing an object to  assume a SINGLE ROLE, 								assuming the class of which that object  is an instance  implements that interface.</p>
+
+
+<h3>
+<a name="focused-interfaces-Application"></a>Application</h3>
+
+
+<p>Like every principle Interface Segregation Principle is one principle   which require additional time and effort spent to apply it during the   design time and increase the complexity of code. But it produce a   flexible design. If we are going to apply it more than is necessary it   will result a code containing a lot of interfaces with single methods,   so applying should be done based on experience and common sense in   identifying the areas where extension of code are more likely to happens   in the future..</p>
+
+
+<h3>
+<a name="focused-interfaces-Consequences"></a>Consequences</h3>
+
+
+<p>This principle is important because it encourages two very important ingredients of a good software design</p>
+
+
+<p>High cohesion - Keep all related methods together</p>
+
+
+<p>Low coupling&nbsp; - Keep dependence of one another to the bare minimum</p>
+
+
+<p>Changes to fat interfaces tend to cause a ripple affect to classes who shouldn't have been affected in the first place.</p>
+
+
+<h3>
+<a name="focused-interfaces-Samples"></a>Samples</h3>
+
+
+<p>Java Collection API is a good example on interface segregation. Classes can depend on Collection, List , Set, SortedSet etc depending on what type of collection they want to use. If eveything was bundled in a single interface then any change to that interface would mean a ripple effect in all collection classes. All types of Lists maintain a high cohesion. Client code is dependent on minimal interface required.</p>
+
+
+
+<h3>
+<a name="focused-interfaces-References"></a>References</h3>
+
+
+<ul>
+	
+<li>
+<a href="http://www.objectmentor.com/resources/articles/isp.pdf">http://www.objectmentor.com/resources/articles/isp.pdf</a>
+</li>
+	
+<li>The <a href="http://www.sonarsource.org/clean-up-design-at-class-level-with-sonar/">LCOM4 metric in Sonar</a> can help reveal violations of this principle in an existing code base.</li>
+
+</ul>
+
+
+
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

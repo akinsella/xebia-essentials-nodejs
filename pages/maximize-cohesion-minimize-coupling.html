@@ -1,0 +1,106 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #FC7A25">
+      
+<para>Maximize cohesion</para>
+      
+<para>Minimize coupling</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="maximize-cohesion-minimize-coupling-Motivation">Motivation</h3>
+
+
+<p>
+<em>Coupling</em> is the degree to which each program module relies on each one of the other modules. So, coupling is all about the relation <em>between</em> modules. Tightly coupled systems have a number of undesirable properties:</p>
+
+
+<ul>
+	
+<li>Changes in one module tend to have a ripple effect on other modules. (So it's hard to make isolated changes.)</li>
+	
+<li>It will be hard to test a module in isolation.</li>
+	
+<li>It will be hard to reuse a module in an alternative context.</li>
+
+</ul>
+
+
+
+<p>
+<em>Cohesion</em> is a measure of how strongly-related or focused the responsibilities of a single module are. Systems with minimal cohesion have a number of undesirable properties:</p>
+
+
+<ul>
+	
+<li>(When applied to source code) code tends to be less readable.</li>
+	
+<li>Code is likely to be less reusable in alternative contexts.</li>
+	
+<li>Complexity is high. (It's hard to figure out what belongs where and why.)</li>
+
+</ul>
+
+
+
+<p>As a consequence, you should <em>minimize</em> coupling and <em>maximimze</em> cohesion when designing your modules.</p>
+
+
+<h3 id="maximize-cohesion-minimize-coupling-Applicability">Applicability</h3>
+
+
+<p>
+<em>Minimal coupling, maximal cohesion</em> is applicable to many contexts. Traditionally, it's often associated to source code level design practices, but it is <em>by no means restricted</em> to that context. Many people have argued that it is equally applicable in enterprise scale problems <sup><a href="#maximize-cohesion-minimize-coupling-sessions">2</a></sup>, and I have no problem considering it applicable to hardware design as well. The standardization of USB, PCI, memory modules - it all seems to be driven by a desire to minimize coupling (allowing us to use it in many contexts) as well a maximizing cohesion (this piece of hardware serves one function only).</p>
+
+
+<h3 id="maximize-cohesion-minimize-coupling-Application">Application</h3>
+
+
+<p>In order to maximize cohesion, make sure you are <em>always</em> able to summarize the purpose of a single module in a single phrase. If it turns out to be impossible to capture the purpose of a module into a single discriminative phrase, then that's a smell. At the other hand, don't go totally overboard by making everything a separate module; it will have a dramatic effect on the number of dependencies between modules, and therefore hurt you in terms of coupling.</p>
+
+
+<p>One of the tools that might help you organizing your dependencies is the Dependency Structure Matrix.</p>
+
+
+<h3 id="maximize-cohesion-minimize-coupling-Consequences">Consequences</h3>
+
+
+<p>Applying this principle makes it more likely that pieces of your software will survive over time.</p>
+
+
+<h3 id="maximize-cohesion-minimize-coupling-References">References</h3>
+
+
+<ol>
+	
+<li>
+<em>Structured Design</em>, W. Stevens, G. Myers, L. Constantine, IBM Systems Journal, 13 (2), 115-139, 1974.</li>
+	
+<li>
+<span class="confluence-anchor-link" id="maximize-cohesion-minimize-coupling-sessions"></span><em>Simple Architectures for Complex Enterprises</em>, R. Sessions, Microsoft Press, 2008</li>
+
+</ol>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

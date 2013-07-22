@@ -1,0 +1,125 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #DD0025">
+      
+<para>Pair programming</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="pair-programming-Motivation">Motivation</h3>
+
+
+<p>Let's be honest. Overengineered solutions are strangely attractive. We developers are drawn into it like bugs into a bugzapper. We end up spending <em>way</em> too much time on things <em>we don't even need</em>. That's just wrong. We need somebody to get us back on track. And that's exactly what pair programming is going to give you.</p>
+
+
+<blockquote>
+<p>When you pair, one person codes---the driver. The other person is the navigator, whose job is to think. As navigator, sometimes you think about what the driver is typing. (Don't rush to point out missing semicolons, though. That's annoying.) Sometimes you think about what tasks to work on next and sometimes you think about how your work best fits into the overall design.</p>
+
+
+<p>This arrangement leaves the driver free to work on the tactical challenges of creating rigorous, syntactically correct code without worrying about the big picture, and it gives the navigator the opportunity to consider strategic issues without being distracted by the details of coding. Together, the driver and navigator create higher-quality work more quickly than either could produce on their own.<sup><a href="#pair-programming-james_shore">1</a></sup>
+</p>
+</blockquote>
+
+
+<h3 id="pair-programming-Applicability">Applicability</h3>
+
+
+<p>Okay, there might be a few situations when you need some time alone. But, really, in all other cases, pair programming <em>is applicable</em>. That doesn't mean it's <em>easy</em> though. In fact, for most people, it turns out to be quite painful to say goodbye to their time spent in isolation, as evidenced by the type of response you will get when suggesting pair programming to die-hard alone coders:</p>
+
+
+<ul>
+	
+<li>I'm faster on my own</li>
+	
+<li>Can't pair with that guy, he's getting on my nerves</li>
+	
+<li>Pair programming is too tiring</li>
+	
+<li>We've split up the work and we'll get it done faster if we use two keyboards</li>
+	
+<li>There's too much background noise</li>
+	
+<li>I'm just slowing her down</li>
+
+</ul>
+
+
+
+<p>Iwein Fuld wrote a great article on the subject a in 2010, and this is what he said:</p>
+
+
+<blockquote>
+
+<p>Some of this might sound plausible, so let me axe that down first. No you're not faster on your own, you're just creating more crap for your colleagues to puzzle over and eventually delete. The code you write alone sucks. That guy that is getting on your nerves is trying to tell you (clumsily) that your code sucks, try to listen to him and you'll turn into a better programmer. Or maybe you can teach him something and he'll stop getting on your nerves. If your code is so simple that you can split up the work in advance you're writing it on too low an abstraction level, or you need to work on this in two pairs. If you're slowing the other guy down, that's a good thing. That will prevent him from writing code that you cannot maintain. If you don't feel worthy of your colleagues code, get over it, or get off the team.<sup><a href="#pair-programming-ifuld">2</a></sup>
+</p>
+</blockquote>
+
+
+<p>In some situations pair programming is not a good fit. Be sure to understand the need for <a href="alone-time">alone time</a>
+</p>
+
+
+<h3 id="pair-programming-Application">Application</h3>
+
+
+<p>First of all, you optimize the conditions for pair programming. That could include many things, such as:</p>
+
+
+<ul>
+	
+<li>
+<em>Noise cancellation</em>: if there's too much noise in your environment, if people are bothering you for the wrong things, if there are things that would prevent you from being focused even if you would be working on your own, then you need to fix it.</li>
+	
+<li>
+<em>Pair programming ergonomics</em>: if you can't pair comfortably, then it's not going to fly. If your navigator is unable to read your screen, then it will fail. Getting another monitor might help. If - in order for the navigator to see the screen - the driver needs to work in a cramped position, it will fail as well. There are certain type of desks that just don't support pair programming at all. Rearrange the office floor to fix it. Make yourself comfortable.</li>
+	
+<li>Pick a style. Iwein lists a number of styles in his article^<a href="#pair-programming-ifuld">2</a>^. Pick the right one for the task at hand.</li>
+
+</ul>
+
+
+
+<h3 id="pair-programming-Consequences">Consequences</h3>
+
+
+<p>Pair programming helps you to stay focused on your task and it grows collective ownership.</p>
+
+
+<h3 id="pair-programming-References">References</h3>
+
+
+<ol>
+	
+<li>
+<span class="confluence-anchor-link" id="pair-programming-james_shore"></span> James Shore, <em>The Art of Agile Development</em>, 2010, <a href="http://jamesshore.com/Agile-Book/pair_programming.html">http://jamesshore.com/Agile-Book/pair_programming.html</a>
+</li>
+	
+<li>
+<span class="confluence-anchor-link" id="pair-programming-ifuld"></span> Iwein Fuld, <em>Practical Styles of Pair Programming</em>, 2010, <a href="http://blog.xebia.com/2010/05/09/practical-styles-of-pair-programming/">http://blog.xebia.com/2010/05/09/practical-styles-of-pair-programming/</a>
+</li>
+
+</ol>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

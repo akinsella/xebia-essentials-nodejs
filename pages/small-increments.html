@@ -1,0 +1,79 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #107FD5">
+      
+<para>Work in small increments</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="small-increments-Motivation">Motivation</h3>
+
+<p>The natural tendency of developers is to fix the world as they move through it. This is a good habit, but each small fix there should isolated. Stop the world refactorings are doomed to fail, so you should strive to avoid them.</p>
+
+
+<h3 id="small-increments-Applicability">Applicability</h3>
+
+<p>In any situation where you are changing a working system. Usually we apply this to software, but it works equally well in teams, cars and households.</p>
+
+
+<h3 id="small-increments-Application">Application</h3>
+
+<p>Learn to limit the amount of work you do between commits. This forces you to break your work into small, coherent changes, often a number of changes that preserve existing functionality while paving the way for the new features, followed by one more more changes that enable the new behaviour. </p>
+
+
+<p>Run your test suite before every commit. </p>
+
+
+<h3 id="small-increments-Consequences">Consequences</h3>
+
+<ul>
+	
+<li>Easier integration: fewer merge conflicts occur and when they do they're much easier to resolve.</li>
+	
+<li>Higher quality: you can't break your work into small, coherent changes without a clear understanding of your goal and how to get there. The small, coherent changes are easier to keep in your head at once. These factors combined tend to improve the quality of your code and reduce the number of defects.</li>
+	
+<li>All changes are optional. If you decide to keep the new feature, but not to deprecate the old API you can revert the deprecation in isolation. This is also useful to limit impact if you need to cut your losses and back out of a bad idea.</li>
+	
+<li>Reordering of changes becomes possible. When changes depend on each other this becomes a non trivial exercise, but it is usually possible to change the order of changes in retrospect.</li>
+
+</ul>
+
+
+
+<h3 id="small-increments-References">References</h3>
+
+<ul>
+	
+<li>
+<a href="one-change-at-a-time">one-change-at-a-time</a>
+</li>
+	
+<li>
+<a href="thirty-minute-methods">thirty-minute-methods</a>
+</li>
+
+</ul>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

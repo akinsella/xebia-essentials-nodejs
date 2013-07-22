@@ -1,0 +1,50 @@
+{
+  "name": "xebia-essentials-nodejs",
+  "description": "Node.js xebia essentials extractor",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Alexis Kinsella <alexis.kinsella@gmail.com>",
+  "engines": {
+    "node": ">= 0.10.0 < 0.11.0"
+  },
+  "bugs": {
+    "url": "http://github.com/akinsella/xebia-essentials-nodejs/issues"
+  },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT"
+  } ],
+  "keywords": [
+    "node.js",
+    "rest",
+    "api",
+    "proxy",
+    "express"
+  ],
+  "repository": "git@github.org:akinsella/xebia-essentials-nodejs.git",
+  "main": "app",
+  "contributors": [
+    {
+      "name": "Alexis Kinsella",
+      "email": "alexis.kinsella@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "express": "3.x",
+    "underscore": "*",
+    "request": "*",
+    "coffee-script": "*",
+    "moment": "*",
+    "ect": "*",
+    "xml2json": "*",
+    "mkdirp": "*",
+    "async": "*",
+    "jsdom": "*"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "start": "node app"
+  }
+}

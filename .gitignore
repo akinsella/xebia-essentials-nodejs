@@ -1,0 +1,19 @@
+# NodeJS
+.DS_Store
+.#*
+*.swp
+bin
+
+release.properties
+
+*~
+.idea
+package-dev.json
+node_modules
+tags
+
+#Redis
+dump.rdb
+
+.sass-cache
+npm-debug.log

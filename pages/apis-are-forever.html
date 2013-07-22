@@ -1,0 +1,181 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #FC7A25">
+      
+<para>APIs, like diamonds, are forever</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="apis-are-forever-Motivation">Motivation</h3>
+
+
+<p>You want to be careful crafting your API. If you don't, then you might end up with something that hurt you forever. It's not hard to come up with examples of bad API design. Java's XML processing libraries are notoriously awkward to use. Things that should be simple require tons of boilerplate code.</p>
+
+
+<p>Joshua Bloch presented his ideas on API design in a talk named 'How to Design a Good API and Why it Matters' at OOPSLA 2006. It comprises a set of criteria that are fairly easy to remember, as they are all small enough to fit on a bumper sticker:</p>
+
+
+<ul>
+	
+<li>All programmers are API designers</li>
+	
+<li>APIs can be among your greatest assets or liabilities</li>
+	
+<li>Public APIs, like diamonds, are forever</li>
+	
+<li>APIs should be easy to use and hard to misuse</li>
+	
+<li>APIs should be self-documenting</li>
+	
+<li>When designing an API, first gather requirements - with a healthy degree of skepticism</li>
+	
+<li>Structure requirements as use-cases</li>
+	
+<li>Early drafts of APIs should be short</li>
+	
+<li>Code the use-cases against your API before you implement it</li>
+	
+<li>Maintain the code for use-cases as the API evolves</li>
+	
+<li>Example code should be exemplary</li>
+	
+<li>You can't please everyone so aim to displease everyone equally</li>
+	
+<li>Expect API-design mistakes due to failures of your imagination</li>
+	
+<li>API design is not a solitary activity</li>
+	
+<li>Avoid fixed limites on input sizes</li>
+	
+<li>Names matter</li>
+	
+<li>If it's hard to find good names, go back to the drawing board</li>
+	
+<li>When in doubt leave it out</li>
+	
+<li>Keep APIs free of implementation details</li>
+	
+<li>Minimize mutability</li>
+	
+<li>Documentation matters</li>
+	
+<li>Consider the performance of consequences of an API design decisions, but don't warp an API to achieve performance gains</li>
+	
+<li>When in Rome, do as the Romans do</li>
+	
+<li>Minimize accessibility</li>
+	
+<li>Subclass only if you can say with a straight face that every instance of the subclass is an instance of the superclass</li>
+	
+<li>Design and document for inheritance or else prohibit it</li>
+	
+<li>Don't make the client do anything the library could do</li>
+	
+<li>Obey the principle of the last astonishment</li>
+	
+<li>Fail fast</li>
+	
+<li>Provide programmatic access to all data available in string form</li>
+	
+<li>Overload with care</li>
+	
+<li>Use the right data type for the job</li>
+	
+<li>Use consistent parameter ordering across methods</li>
+	
+<li>Avoid long parameter names</li>
+	
+<li>Avoid return values that demand exceptional processing</li>
+	
+<li>Throw exceptions only to indicate exceptional conditions</li>
+	
+<li>Throw unchecked exceptions unless clients can realistically recover from the failure</li>
+	
+<li>API design is an art, not a science</li>
+
+</ul>
+
+
+
+<h3 id="apis-are-forever-Applicability">Applicability</h3>
+
+
+<p>Always.</p>
+
+
+<h3 id="apis-are-forever-Application">Application</h3>
+
+
+<ul>
+	
+<li>Use it while designing the API</li>
+	
+<li>Use it while coding</li>
+	
+<li>Use it while reviewing code</li>
+	
+<li>Use it while pair programming</li>
+
+</ul>
+
+
+
+<p>It might be good idea to read the list before you go off to design something significant, or always have a printed version of the list close to where you are.</p>
+
+
+<h3 id="apis-are-forever-Consequences">Consequences</h3>
+
+
+<p>The only negative consequence I can imagine related to trying to follow the guidelines given by Josh are - perhaps - analysis paralysis. Pair programming will prevent that. In fact, just by pair programming and have your buddy remind you of API design bumper stickers, you might have all the benefits without the chance of analysis paralysis.</p>
+
+
+<p>Now, some people might argue that following these standards doesn't address a particular business value for the customer, but then I disagree. It is your responsibility as a programmer to create good code. Don't be tempted to create something messy just because you are in a hurry. Chances are that - if you work like that - it will bite back and result in major head aches when you need to overhaul your code later on.</p>
+
+
+<p>In order to avoid any discussions on taking the time to work according the guidelines given above, consider making it part of your definition of done, and make sure everybody agrees on that.</p>
+
+
+<h3 id="apis-are-forever-Samples">Samples</h3>
+
+
+<p>Less than great API design samples, often serving in examples in Joshua Bloch's talk: JAXP</p>
+
+
+<h3 id="apis-are-forever-References">References</h3>
+
+
+<ul>
+	
+<li>
+<a href="http://www.infoq.com/articles/API-Design-Joshua-Bloch">InfoQ Article</a>
+</li>
+	
+<li>
+<a href="http://www.infoq.com/presentations/effective-api-design">Video recorded at JavaPolis</a>
+</li>
+
+</ul>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

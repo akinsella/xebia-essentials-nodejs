@@ -1,0 +1,115 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #107FD5">
+      
+<para>Assert against improper behaviour</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="assertions-Motivation">Motivation</h3>
+
+
+<p>Ideally, the compiler would be able to verify all of your assumptions. In reality, they can't. Next question is if you would be able to write tests for all of those situations. After all, that's what you normally do for all circumstances in which the compiler is not helping. In reality, that doesn't work out either. The combinatorial explosion of states your modules might go into is just overwhelming.</p>
+
+
+<p>This is where assertions come to the rescue. Assertions allow you to validate pre- and postconditions and can help you to assure your invariants hold. Putting in assertions will make sure your code fails early before causing anymore damage. It also works as a mental flag.</p>
+
+
+<ul>
+	
+<li>You think you're sure something will never happen =&gt;</li>
+	
+<li>The rule tells you to put an assertion in =&gt;</li>
+	
+<li>You start to consider if your assumption actually holds in all circumstances =&gt;</li>
+	
+<li>You might alter your code based on the conclusion =&gt;</li>
+	
+<li>You put in an assertion</li>
+
+</ul>
+
+
+
+<h3 id="assertions-Applicability">Applicability</h3>
+
+
+<p>Always. Don't go overboard and assert everything though. As I said, one of the most important reasons for having assertions is to train your consciousness to find the conditions in which your assumptions no longer hold.</p>
+
+
+<h3 id="assertions-Application">Application</h3>
+
+
+<p>There are a couple of flavors for doing assertions in Java out there.</p>
+
+
+<p>Java keyword:</p>
+
+
+
+
+
+
+<p>Disadvantage: they get disabled by default.</p>
+
+
+
+<p>Spring Assert class:</p>
+
+
+
+
+
+
+<p>Disadvantage: no isolated jar; you pull in a significant number of classes.</p>
+
+
+
+<p>Guava <a href="http://guava-libraries.googlecode.com/svn/tags/release03/javadoc/com/google/common/base/Preconditions.html">Preconditions</a> class:</p>
+
+
+
+
+
+
+
+<h3 id="assertions-Consequences">Consequences</h3>
+
+
+<p>If you put in assertions, then your code will fail if the assertions are violated. Don't try to catch these exceptions. If you are catching AssertionErrors, then you probably misused assertions for some other purpose.</p>
+
+
+<h3 id="assertions-References">References</h3>
+
+
+<ol>
+	
+<li>
+<em>Programming Defensively</em>, Interview with Andy Hunt and Dave Thomas, <a href="http://www.artima.com/intv/defense.html">http://www.artima.com/intv/defense.html</a>
+</li>
+
+</ol>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

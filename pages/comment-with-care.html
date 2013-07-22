@@ -1,0 +1,169 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #107FD5">
+      
+<para>Comment with care</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="comment-with-care-Motivation">Motivation</h3>
+
+
+<p>Getting the comments right is as hard (and important) as getting the source code right. Having too many comments in a file can be as detrimental to maintainability as having too few <sup>[citation needed]</sup>, comments can be useless and the worst are incorrect or misleading.</p>
+
+
+<p>Source code comments can assert intellectual property ownership and licensing terms.</p>
+
+
+<h3 id="comment-with-care-Applicability">Applicability</h3>
+
+
+<p>Every modern programming language I'm aware of supports source code comments.</p>
+
+
+<h3 id="comment-with-care-Application">Application</h3>
+
+
+<ul>
+	
+<li>In an object-oriented language such as Java <sup>1</sup>, it's fair to demand a type-level JavaDoc header that describes the intent and responsibility of the class or interface on every public or protected type.</li>
+	
+<li>On API's intended for use by others, every public method should be appropriately documented.</li>
+	
+<li>Use the standard documentation system for the platform. In Python, that's doc strings. In Java, that's JavaDoc. The standard documentation system is not only familiar to humans, most IDE's and some editors know how to read it too. As obvious as this may seem, I once had the displeasure of using a closed-source API documented using a proprietary HTML layout not in any way resembling standard JavaDoc <sup>2</sup>. It was painful.</li>
+
+</ul>
+
+
+
+<p>Guidelines aside, whenever you find yourself wondering: "I wonder whether this'll make sense to me later", you know it's time for a comment. Ensure the comment contains information that cannot be obtained by simply reading the code itself.</p>
+
+
+<h3 id="comment-with-care-Consequences">Consequences</h3>
+
+
+<p>Effective use of source code comments improves the maintainability of program code. Coming back to your or someone else's code to add a feature or carry out a fix will take a matter of minutes or hours, rather than days or weeks.</p>
+
+
+<h3 id="comment-with-care-Samples">Samples</h3>
+
+
+<h4 id="comment-with-care-Don'tdocumentbadcode-rewriteit.">Don't document bad code - rewrite it.</h4>
+
+
+<p>The <a href="http://en.wikipedia.org/wiki/Comment_%28computer_programming%29">wikipedia article on commenting</a> ascribes this aphorism to <em>The Elements of Programming Style</em> [3]. It's a good general guideline, but it may not always be feasible, especially in maintenance projects.</p>
+
+
+<h4 id="comment-with-care-Don'trepeatthecode-clarifyitsintent.">Don't repeat the code - clarify its intent.</h4>
+
+
+<p>Code Complete [1] illustrates this with a nice example. Which is more clarifying?</p>
+
+
+
+
+
+<p>or</p>
+
+
+
+
+
+<h4 id="comment-with-care-Documentsurprisesandworkarounds.">Document surprises and workarounds.</h4>
+
+
+<p>"Surprises and workarounds" is deliberately vague, as it's very hard to qualify. A common scenario is that you add a special case in a method to fix a bug or when you find out that a library behaves differently than you thought it would because it bites you during testing.</p>
+
+
+<p>An example of this is when I found out that a Java 1.5 <code>ThreadPoolExecutor</code> with a <code>corePoolSize</code> of 0, a <code>maxPoolSize</code> of 50 and an unbounded task queue does not idle at 0 threads and execute at 50, but rather, starts 0 threads and executes nothing at all. When I dug into this, I found out that Java 1.5 has no way to make a <code>ThreadPoolExecutor</code> idle at 0 threads (Java 1.6 does) and that in both versions <code>maxPoolSize</code> is meaningless with an unbounded queue. I put a short note above the variable declaration to benefit any maintenance programmer that needs to adjust the pool sizes.</p>
+
+
+<p>A special case of this is where source code analysis tools report a false positive. The flagship example of this is the <a href="http://digitaloffense.net/tools/debian-openssl/">Debian OpenSSL fiasco</a> of a few years back. The random number generator contained what appears to be bad use of uninitialized memory (and was reported as such by code analysis tools), but which was essential to seeding the random number generator. Someone removed the line in a clean-up effort and the result was two years' worth of SSL certificates each of which could be brute-forced in at most 32768 attempts.</p>
+
+
+<h4 id="comment-with-care-Makeeverycommentcount.">Make every comment count.</h4>
+
+
+<p>Excessive comments are just clutter.</p>
+
+
+<h4 id="comment-with-care-Thejava.util.concurrentpackage">
+<img alt="(thumbs up)" class="emoticon emoticon-thumbs-up" data-emoticon-name="thumbs-up" src="/confluence/s/en_GB/3391/c989735defd8798a9d5e69c058c254be2e5a762b.2/_/images/icons/emoticons/thumbs_up.png"> The <code>java.util.concurrent</code> package</h4>
+
+
+<p>The JavaDoc comments in the <code>java.util.concurrent</code> package are outstanding. They're short and to the point where possible, meticulously detailed where required.</p>
+
+
+<h4 id="comment-with-care-Eclipsegettersandsetters">
+<img alt="(thumbs down)" class="emoticon emoticon-thumbs-down" data-emoticon-name="thumbs-down" src="/confluence/s/en_GB/3391/c989735defd8798a9d5e69c058c254be2e5a762b.2/_/images/icons/emoticons/thumbs_down.png"> Eclipse getters and setters</h4>
+
+
+<p>Eclipse's default template for the JavaDoc comment on getters and setters is horrible.</p>
+
+
+
+
+<p>These comments are grammatically ugly. Worse, the comments don't add any value: we know what a getter or setter does and if a method does something else it shouldn't masquerade as a getter or setter in the first place. Don't generate comments using this template, just leave them out.</p>
+
+
+<p>If your architect/analysis tool/spouse won't let you get away with undocumented getters and setters, at least replace the template by something grammatically correct.</p>
+
+
+<h4 id="comment-with-care-Unit,bounds,resolution,precision">
+<img alt="(thumbs up)" class="emoticon emoticon-thumbs-up" data-emoticon-name="thumbs-up" src="/confluence/s/en_GB/3391/c989735defd8798a9d5e69c058c254be2e5a762b.2/_/images/icons/emoticons/thumbs_up.png"> Unit, bounds, resolution, precision</h4>
+
+
+<p>When dealing with measurements and amounts, make sure the unit, resolution and bounds are apparent. It's often possible and desirable to make this information programmatically available, such as with <code>java.util.Currency</code> or <a href="http://www.javaworld.com/javaworld/jw-10-2007/jw-10-jsr275.html">JSR-275</a>. Failing that, you can resort to code comments such as in the next example.</p>
+
+
+
+
+
+<p>The <code>xsd:dateTime</code> has a resolution in seconds (optionally milliseconds) and an optional UTC offset. The UTC offset is required to unambiguously pinpoint a calendar date and time on the time continuum. If the actual offset is unavailable, a time zone is the next best thing. The fact that we"re using an <code>xsd:dateTime</code> instead of an <code>xsd:string</code> has documentary value in and of itself.</p>
+
+
+<h3 id="comment-with-care-References">References</h3>
+
+
+<ol>
+	
+<li>Code Complete (Steve McConnell, Microsoft Press), pages 777-817.</li>
+	
+<li>The Pragmatic Programmer (Hunt/Thomas, Addison Wesley), page 249-251.</li>
+	
+<li>The Elements of Programming Style (Kernighan/Plauger, Mcgraw-Hill)</li>
+
+</ol>
+
+
+
+
+<h3 id="comment-with-care-Footnotes">Footnotes</h3>
+
+
+<p>1. Some argue Java isn't an object oriented language. It's close enough for the purposes of this article.<br>
+2. I'm looking at you, TIBCO iProcess Server Objects Java.</p>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

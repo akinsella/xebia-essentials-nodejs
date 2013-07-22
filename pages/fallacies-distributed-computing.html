@@ -1,0 +1,118 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #FC7A25">
+      
+<para>Remember the fallacies of distributed computing</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+
+<div id="card_images">
+	
+<span id="card_back" style="padding:10px;">
+	<span id="card_front" style="padding:10px;">
+
+</span></span>
+</div>
+
+
+<h3>
+<a name="fallacies-distributed-computing-Motivation"></a>Motivation</h3>
+
+
+<p>Peter Deutsch asserted that programmers new to distributed applications invariably make a set of assumptions known as the Fallacies of Distributed Computing and that all of these assumptions ultimately prove false, resulting either in the failure of the system, a substantial reduction in system scope, or in large unplanned expenses required to redesign the system to meet its original goals.</p>
+
+
+<h3>
+<a name="fallacies-distributed-computing-Applicability"></a>Applicability</h3>
+
+
+<p>More often than not, we at Xebia work on distributed systems. In our industry, it is not uncommon to ignore the fallacies of distributed computing.</p>
+
+
+<ol>
+	
+<li>The network is reliable.</li>
+	
+<li>Latency is zero.</li>
+	
+<li>Bandwidth is infinite.</li>
+	
+<li>The network is secure.</li>
+	
+<li>Topology doesn't change.</li>
+	
+<li>There is one administrator.</li>
+	
+<li>Transport cost is zero.</li>
+	
+<li>The network is homogeneous.</li>
+
+</ol>
+
+
+
+<p>Ignoring these properties will lead to brittle systems. We don't want to create brittle systems; we want to create robust systems. Systems that survive network failure. Systems that do not need he constant presence of a network administrator in order to survive. Systems that are resilient to changes to the network topology. </p>
+
+
+<h3>
+<a name="fallacies-distributed-computing-Application"></a>Application</h3>
+
+
+<p>First of all, you need to be aware of the existence of this list and understand that there is no such thing as a free ride. When the network is getting involved, <em>you need to be be aware of the consequences</em>, and design for it.</p>
+
+
+<p>In addition to that: Many attempts have been made to hide the complexity of coping with the characteristics of a distributed system. Be careful with those solutions. Solutions that suggest that you should not worry about the network and allow you to create software as though the network wasn't there are suspicious. </p>
+
+
+<h3>
+<a name="fallacies-distributed-computing-Consequences"></a>Consequences</h3>
+
+
+<p>It is one thing to be <em>aware of the consequences</em> of your decisions when designing for a distributed solution. By carefully choosing from your options, you <em>can</em> most definitely increase the resilience of your system against network failures. However, increasing the robustness of your system might also increase the complexity of the programming model. </p>
+
+
+<p>Jini is an example of a technology that definitely took the 8 fallacies of distributed computing seriously, and I think it's fair to say it was much more resilient to networking issues than Java EE solutions coming about around that same timeframe. However, it <em>did</em> put a burden to the developer. You had to write more code in order to be able to deal with whatever could go wrong. </p>
+
+
+<p>Now, question is if your solutions <em>always</em> need to have the same properties as Jini-based solutions, especially if there is a price you will have to pay for it. Probably not. In the end, it's just a balancing act, balancing factors such as the price business is willing to pay for ultimate availability, the characteristics of the data center(s) and the experience of the team you are working with.</p>
+
+
+<h3>
+<a name="fallacies-distributed-computing-References"></a>References</h3>
+
+
+<ul>
+	
+<li>
+<a href="http://en.wikipedia.org/wiki/Fallacies_of_Distributed_Computing">Wikipedia</a>
+</li>
+
+</ul>
+
+
+
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

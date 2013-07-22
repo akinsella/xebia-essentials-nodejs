@@ -1,0 +1,73 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #107FD5">
+      
+<para>Aim for thread safety</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3>
+<a name="thread-safe-Motivation"></a>Motivation</h3>
+
+
+<p>When your code should be thread safe but isn't you will find out too late at an inconvenient time. This can lead to embarrassing situations where you need to fix a hard problem under high pressure. Not good. If you apply these simple rules you will avoid this.</p>
+
+
+<h3>
+<a name="thread-safe-Applicability"></a>Applicability</h3>
+
+
+<p>Whenever you use objects in multiple threads they must be thread safe. This can go for services that are shared, but also for value objects that are passed along.</p>
+
+
+<h3>
+<a name="thread-safe-Application"></a>Application</h3>
+
+
+<p>The only risk of thread unsafe code is that state is not appropriately shared, so all the rules apply to state.</p>
+
+
+<p>The first rule applies to services. If an object simply doesn't hold any state it is always thread safe. Virtually all applications must hold state to be useful. In particular services need to collaborate with other services. The rules are bent usually, when people say "stateless service" they usually mean "services that don't hold any state, but the immutable references to other services".</p>
+
+
+<p>Immutable objects are usually the objects passed around in an application. If the state in an object cannot be changed after creation, there is no risk of one client seeing a different state than another. Creating an object as being immutable should be the default choice. Anything that mutates state is potentially dangerous.</p>
+
+
+<p>Encapsulated locks is the last resort. If an object has to be changed during its lifetime, this is the only way to ensure thread safety. Locking on the object itself is also thread safe, but it can cause unwanted locking and even deadlocks if others are locking on it too.</p>
+
+
+<p>Non thread safe code is not a problem in many situations. As long as objects are not shared with multiple threads, making them thread safe is adding complexity that is not needed. Many web applications are built around non thread safe domains, and this is not a problem. Be sure to make it clear that code is not thread safe and will not be used out of the safe context it is supposed to be used in.</p>
+
+
+<h3>
+<a name="thread-safe-References"></a>References</h3>
+
+
+<p>Brian Goetz: Java Concurrency in Practice</p>
+
+
+
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

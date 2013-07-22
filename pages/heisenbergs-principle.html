@@ -1,0 +1,137 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #6DC726">
+      
+<para>Beware of Heisenbugs</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+
+<div id="card_images">
+	
+<span id="card_back" style="padding:10px;">
+	<span id="card_front" style="padding:10px;">
+
+</span></span>
+</div>
+
+
+<blockquote>
+<p>"The more closely you look at one thing, the less closely can you see something else."</p>
+</blockquote>
+
+
+<h3>
+<a name="heisenbergs-principle-Motivation"></a>Motivation</h3>
+
+
+<p>A heisenbug (named after the Heisenberg Uncertainty Principle) is a computer bug that disappears or alters its characteristics when an attempt is made to understand what's going on. Needless to say that bugs like these are really hard to debug. You need to be aware of the fact that behaviour <strong>can</strong> change as a consequence of your attempt to understand its root cause.</p>
+
+
+<h3>
+<a name="heisenbergs-principle-Applicability"></a>Applicability</h3>
+
+
+<p>There is no golden rule for the situation in which Heisenbugs can turn up - which makes them even harder to trap. Just to give you some examples of situations in which Heisenbugs might occur:</p>
+
+
+<ul>
+	
+<li>You are stepping through a thread that may cause racing conditions when executing normally.</li>
+	
+<li>By attaching a debugger, you are influencing some properties of the Java VM's normal execution: setting watches might suggest more synchronization than what you would have in normal circumstances, the overhead of having the debugger attached might alter the amount of memory normally available to your application, etc.</li>
+	
+<li>If you test code by basically using a loopback type of construct (calling from your test into application code running in the same VM), there is a risk of sharing a lock that would never be shared if you call your application code remotely, from another VM.</li>
+
+</ul>
+
+
+
+<p>Heisenbugs are nasty, because your code might run successfully while testing or debugging, while it might fail when running in production. At Xebia, we care about having all your code tested. You <em>do</em> however need to make sure that you are testing the right thing. There is no excuse for not writing tests, but having tests running to completion successfully is no excuse for failing production code.</p>
+
+
+<h3>
+<a name="heisenbergs-principle-Application"></a>Application</h3>
+
+
+<p>So, what are you going to do about it? How do you prevent bugs like these from appearing in your code, and how do you spot their appearance. There's more than just a single word of advice on that:</p>
+
+
+<ul>
+	
+<li>Mimic the production environment as closely as possible while running your test. (Consider if there are any differences between the hardware running the tests and the hardware running your code in production.)</li>
+	
+<li>If you have a bug, never stop chasing it until you have a test that reproduces it.</li>
+	
+<li>Don't rely on coincidence for recreating the bug in your test. It might be that you can reproduce the bug by putting in a Thread.sleep() on your system, while on the system of your buddy it never shows up, since his system is executing faster or slower. If it's about concurrency related bugs, use <a href="http://code.google.com/p/multithreadedtc/">MultithreadedTC</a> to forcefully recreate the different states in which your running code might end up being.</li>
+	
+<li>Understand Java's memory model.</li>
+	
+<li>Understand the differences between Java code running on different platforms.</li>
+	
+<li>Be aware of the limitation of line and branch coverage reports: they might show that your test code hit a particular branch or line, but it doesn't factor in differences in the state of the rest of your application. In other words, 100% branch and line coverage and a successful build does not mean you don't have Heisenbugs.</li>
+
+</ul>
+
+
+
+<h3>
+<a name="heisenbergs-principle-Consequences"></a>Consequences</h3>
+
+
+<p>Following the advice above, has a couple of consequences. </p>
+
+
+<ul>
+	
+<li>Having tests run on your own system only might no longer be enough to proof correctness of your program. You could get another system to replicate the runtime production environment, or - and that's the better idea - you make sure you have an automated build on an environment that reflects production.</li>
+	
+<li>Using MultithreadedTC requires that your code actually lets itself be forced into different states. No example here. Just give it a try, and you will know what I mean.</li>
+	
+<li>Ideally, your the only assumptions your tests make on the internals of your classes should be based on the contract defined by them, not by the implementation. However, there might be situations in which the need to force your objects to go into a certain state, you <strong>do</strong> need to factor in assumptions on the internals of these objects. That might not be ideal, but it's a cheap price for increasing the robustness of your software.</li>
+
+</ul>
+
+
+
+<h3>
+<a name="heisenbergs-principle-References"></a>References</h3>
+
+
+<ul>
+	
+<li>
+<a href="http://en.wikipedia.org/wiki/Unusual_software_bug#Heisenbug">Wikipedia on Heisenbug</a>
+</li>
+	
+<li>
+<em><a href="http://portal.acm.org/citation.cfm?id=101328.101333">Heisenberg Uncertainty</a></em>, F. Laplante, ACM SIGSOFT Software Engineering Notes, October 1990</li>
+
+</ul>
+
+
+
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

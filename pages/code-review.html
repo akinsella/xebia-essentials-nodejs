@@ -1,0 +1,80 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #DD0025">
+      
+<para>Review code</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3>
+<a name="code-review-Motivation"></a>Motivation</h3>
+
+
+<p>We care about quality. Since everyone makes mistakes we reduce the risk of mistakes escaping to production by reviewing all code. Together with <a href="pair-programming">Pair Programming</a> this practice ensures that always two pairs of eyes have seen all production code.</p>
+
+
+<h3>
+<a name="code-review-Applicability"></a>Applicability</h3>
+
+
+<p>Reviewing code is a great way to get an overview of a code base; to learn the style and the domain. It is also a way to view the code from an unusual standpoint and see inconsistencies that would otherwise stay out of focus. The only way to truly know the internal quality of a code base is to read the code. Apply reviews when you're not sure about the code quality, or when you want to coach a team to better quality code through concrete feedback.</p>
+
+
+<h3>
+<a name="code-review-Application"></a>Application</h3>
+
+
+<p>Reviewing can be done in several ways. First there is the old fashioned way: just take a text editor (with highlighting if you can) and read the code file by file. It can be useful to load the code in an IDE, but since you're not here to check if it will compile this might just as well be an unneeded distraction. While reading the code write down concretely what you would change if you were refactoring. Share this with the developers through a simple text.</p>
+
+
+<p>Then there is the per commit reviewing style, that allows the reviewer to review changes rather than the end result. This is perfect for quick feedback on developer behavior, rather than the result of the behavior. It takes more time and discipline to review all commits.</p>
+
+
+<h3>
+<a name="code-review-Consequences"></a>Consequences</h3>
+
+
+<p>Increased shared ownership is attained when reviewing is done by team members. When reviews are done it is important to invest time in dealing with the comments. Otherwise the (sometimes mundane) task of reviewing is not rewarded properly and will feel like a waste of time.</p>
+
+
+<h3>
+<a name="code-review-Samples"></a>Samples</h3>
+
+
+<p>There are tools that help reviewing greatly, such as Crucible (comercial) and of free tools around the git vcs, like gerrit and the github review system. Especially when reviewing per commit, decent tooling is a must have.</p>
+
+
+<h3>
+<a name="code-review-References"></a>References</h3>
+
+
+<p>
+<a href="pair-programming">pair-programming</a>
+</p>
+
+
+
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>

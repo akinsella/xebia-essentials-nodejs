@@ -1,0 +1,92 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/resources/style.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
+<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js"></script><script type="text/javascript" src="http://www.undermyhat.org/blog/wp-content/uploads/2009/09/shBrushClojure.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushLisp.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script><script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js"></script><script type="text/javascript">
+          SyntaxHighlighter.all();
+          SyntaxHighlighter.defaults['toolbar'] = false;
+          SyntaxHighlighter.defaults['gutter'] = false;
+        </script>
+</head>
+<body>
+<div id="main">
+<div id="top"></div>
+<div id="masthead" style="background-color: #DD0025">
+      
+<para>Keep your logs clean</para>
+    
+</div>
+<div id="body">
+<div class="wiki-content" id="main-content">
+                           
+<h3 id="clean-logs-Motivation">Motivation</h3>
+
+
+<p>Logging is one of those deceptively simple concerns. "How hard can it be?"</p>
+
+
+<h3 id="clean-logs-Applicability">Applicability</h3>
+
+<p>Logging is a very common requirement that tends to get not much thought unless the logging volume is huge.</p>
+
+
+<h3 id="clean-logs-Application">Application</h3>
+
+
+<h4 id="clean-logs-Logattherightlevel">Log at the right level</h4>
+
+<p>Establish (and follow) a common convention for assigning event priorities. For example, use the INFO level to report the actual (as used) configuration settings during start-up and inform of system status changes such as "Started successfully" or "Shutdown initiated by &lt;admin name&gt;". Use the WARNING level to report things that a developer or operator should look at, but that don't threaten the immediate operation. Use the ERROR level to report things that need immediate action, such as an unreachable database or a backed up message queue. Use the DEBUG level for everything else. You should be able to tie a pager to ERROR events and not lose sleep over trivialities.</p>
+
+
+<h4 id="clean-logs-Logeverymessageonce">Log every message once</h4>
+
+<p>Anything more than that adds confusion and wastes disk space. It's quite common for exceptions to be logged more than once. Avoid this if you can.</p>
+
+
+<h4 id="clean-logs-Throwmeaningfulexceptions">Throw meaningful exceptions</h4>
+
+<p>An exception message in your log file is of no use if it doesn't help you figure out what's wrong. Use a clear message and provide context. Use custom exception types so that different groups of problem types can be handled separately in different catch blocks.</p>
+
+
+<h4 id="clean-logs-Keepauditinginformationseparately">Keep auditing information separately</h4>
+
+<p>The audit trail should have its own, dedicated destination (log file, database, what have you). The audit trail often has different archiving demands than the application log file.</p>
+
+
+<h4 id="clean-logs-Don'tcrywolf">Don't cry wolf</h4>
+
+<p>If your log file raises a lot of false alarms, it will get ignored and any <em>real</em> problems won't become apparent until the phones start ringing.</p>
+
+
+<p>Don't put yourself in a position where you have to say "Please ignore those exceptions you see in the logs, they are normal". An exception stack trace stands out like a sore thumb in any log file. If you work with functional exceptions, you have to catch them and handle them in a way they do not appear in your technical logs.</p>
+
+
+<h4 id="clean-logs-Allowtuningofarunningsystem">Allow tuning of a running system</h4>
+
+<p>For long running systems, consider embedding some troubleshooting hooks, like the ability to generate more verbose logging; possibly tied to a specific user session. Know how to get a thread dump and a heap dump out of a running JVM. If your software enforces a maximum number of sessions for each user account, make sure there's an admin function to delete active sessions.</p>
+
+
+<h3 id="clean-logs-Consequences">Consequences</h3>
+
+
+<h3 id="clean-logs-Samples">Samples</h3>
+
+
+<h3 id="clean-logs-References">References</h3>
+
+<ul>
+	
+<li>Code complete, 2nd Edition. Steve McConnell, Microsoft Press.</li>
+
+</ul>
+    
+        
+</div>
+<div id="footer">If you have questions, remarks or suggestions, feel free to send an email to <a href="mailto:essentials@xebia.com">essentials@xebia.com</a>.</div>
+</div>
+<div id="copyright">Copyright &copy; 2011 Xebia</div>
+</div>
+</body>
+</html>
