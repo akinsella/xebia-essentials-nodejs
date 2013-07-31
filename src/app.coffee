@@ -15,6 +15,10 @@ ectRenderer = ECT
 	watch: true,
 	root:  "views"
 
+if (!String.prototype.trim)
+	String.prototype.trim = ()->
+		this.replace(/^\s+|\s+$/g, '')
+
 # Express
 app = express()
 

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "requestLogger.js",
+  "sourceRoot": "..",
+  "sources": [
+    "src/lib/requestLogger.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA,CAAO,EAAU,GAAX,CAAN,EAAiB;CAChB,CAAa,CAAN,CAAA,KAAA;CACN,EAAA,CAAA,GAAO,oDAAP;CAAA,CACoC,CAApC,CAAA,GAAO,eAAP;CADA,CAEsC,CAAtC,CAAA,CAAA,EAAO,iBAAP;CAFA,CAGuC,CAAvC,CAAA,EAAA,CAAO,kBAAP;CAHA,CAIwC,CAAxC,CAAA,GAAO,mBAAP;CAJA,CAKqC,CAArC,CAAA,GAAO,gBAAP;CALA,CAMyC,CAAzC,CAAA,GAAO,oBAAP;CANA,EAOA,CAAA,GAAO,oDAAP;CAPA,GASA;CAVD,EAAO;CADS"
+}

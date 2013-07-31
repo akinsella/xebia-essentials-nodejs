@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "allowCrossDomain.js",
+  "sourceRoot": "..",
+  "sources": [
+    "src/lib/allowCrossDomain.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA,CAAO,EAAU,GAAX,CAAN,EAAiB;CAEhB,CAAa,CAAN,CAAA,KAAA;CACN,CAA0C,CAAvC,CAAH,EAAA,uBAAA;CAAA,CAC2C,CAAxC,CAAH,EAAA,IAAA,oBAAA;CADA,CAE2C,CAAxC,CAAH,EAAA,QAAA,gBAAA;CAFA,GAIA;CALD,EAAO;CAFS"
+}

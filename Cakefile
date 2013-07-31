@@ -31,7 +31,7 @@ task 'minify', 'start uglify compressor', ->
 task 'dev', 'Dev Env : Compile CoffeeScript/SCSS source files', ->
   # COFFEE
   # watch application source dir => ROOT
-  coffee_watcher_1 = spawn coffee_exec, ['-cbw', '-o', app_path, app_src_path]
+  coffee_watcher_1 = spawn coffee_exec, ['-cbmw', '-o', app_path, app_src_path]
   coffee_watcher_1.stdout.on 'data', (data) -> print data.toString()
   coffee_watcher_1.stderr.on 'data', (data) -> print data.toString()
   coffee_watcher_1.on 'exit', (status) -> callback?() if status is 0

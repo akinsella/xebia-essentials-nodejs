@@ -26,6 +26,12 @@ ectRenderer = ECT({
   root: "views"
 });
 
+if (!String.prototype.trim) {
+  String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, '');
+  };
+}
+
 app = express();
 
 app.configure(function() {
@@ -85,3 +91,7 @@ console.log("Express listening on port: " + (app.get('port')));
 app.listen(app.get('port'));
 
 console.log('Initializing xml2json-xebia-card-converter application');
+
+/*
+//@ sourceMappingURL=app.map
+*/
